@@ -6,6 +6,8 @@ namespace backend.Migrations;
 public class ArkDbContext : DbContext
 {
     public DbSet<Arks> Arks {get; set;}
+    public DbSet<User> Users { get; set; }
+
     public ArkDbContext(DbContextOptions<ArkDbContext> options)
     : base(options){}
 
@@ -20,6 +22,13 @@ public class ArkDbContext : DbContext
             entity.Property(e => e.Description).IsRequired();
             entity.Property(e => e.ImgUrl).IsRequired();
 
+        });
+
+        modelbuilder.Entity<User>(entity => {
+            entity.HasKey(e => e.UserId);
+            entity.Property(e => e.UserName).IsRequired();
+            entity.HasIndex(x => x.UserName).IsUnique();
+            entity.Property(e => e.Password).IsRequired(); 
         });
     }
 }

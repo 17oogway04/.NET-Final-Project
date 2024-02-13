@@ -19,7 +19,7 @@ public class ArkDbContext : DbContext
             entity.HasKey(e => e.ArkId);
             entity.Property(e => e.Name).IsRequired();
             entity.Property(e => e.Content).IsRequired();
-            entity.Property(e => e.Description).IsRequired();
+            entity.Property(e => e.Location).IsRequired();
             entity.Property(e => e.ImgUrl).IsRequired();
 
         });

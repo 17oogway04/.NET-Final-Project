@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace backend.Models;
 
-public class Arks
+public class Arks //these are posts
 {
     public int ArkId {get; set;}
 
@@ -16,5 +16,5 @@ public class Arks
     public string? ImgUrl {get; set;}
 
     [Required]
-    public string? Description {get; set;}
+    public string? Location {get; set;}
 }

@@ -1,5 +1,7 @@
 using backend.Models;
 using backend.Repositories;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,6 +38,7 @@ public class ArkController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public ActionResult<Arks> CreateArk(Arks ark)
     {
         if(!ModelState.IsValid || ark == null)
@@ -48,6 +51,7 @@ public class ArkController : ControllerBase
 
     [HttpPut]
     [Route("{arkId:int}")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public ActionResult<Arks> UpdateArk(Arks ark)
     {
         if(!ModelState.IsValid || ark == null){
@@ -58,6 +62,7 @@ public class ArkController : ControllerBase
 
     [HttpDelete]
     [Route("{arkId:int}")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public ActionResult DeleteArk(int arkId)
     {
         _arkRepository.DeleteArkById(arkId);

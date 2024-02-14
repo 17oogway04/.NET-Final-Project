@@ -26,7 +26,6 @@ public class AuthService : IAuthService
     {
         var passwordHash = bcrypt.HashPassword(user.Password);
         user.Password = passwordHash;
-
         _context.Add(user);
         _context.SaveChanges();
         return user;

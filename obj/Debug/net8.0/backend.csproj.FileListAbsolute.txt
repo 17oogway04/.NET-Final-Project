@@ -58,3 +58,12 @@
 /Users/danielgilman/Desktop/backend-dotnet/final-project/backend/obj/Debug/net8.0/backend.pdb
 /Users/danielgilman/Desktop/backend-dotnet/final-project/backend/obj/Debug/net8.0/backend.genruntimeconfig.cache
 /Users/danielgilman/Desktop/backend-dotnet/final-project/backend/obj/Debug/net8.0/ref/backend.dll
+/Users/danielgilman/Desktop/backend-dotnet/final-project/backend/bin/Debug/net8.0/BCrypt.Net-Next.dll
+/Users/danielgilman/Desktop/backend-dotnet/final-project/backend/bin/Debug/net8.0/Microsoft.IdentityModel.Abstractions.dll
+/Users/danielgilman/Desktop/backend-dotnet/final-project/backend/bin/Debug/net8.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/Users/danielgilman/Desktop/backend-dotnet/final-project/backend/bin/Debug/net8.0/Microsoft.IdentityModel.Logging.dll
+/Users/danielgilman/Desktop/backend-dotnet/final-project/backend/bin/Debug/net8.0/Microsoft.IdentityModel.Tokens.dll
+/Users/danielgilman/Desktop/backend-dotnet/final-project/backend/bin/Debug/net8.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/danielgilman/Desktop/backend-dotnet/final-project/backend/bin/Debug/net8.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/Users/danielgilman/Desktop/backend-dotnet/final-project/backend/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.dll
+/Users/danielgilman/Desktop/backend-dotnet/final-project/backend/bin/Debug/net8.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll

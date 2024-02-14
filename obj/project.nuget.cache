@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "RgLa+IXSDaAPAsCvhMhxeZtEctjThWQjCca3YTYPHzAsrgTG6yFcXe25yKDEjsVWcB9TDvooWlXVN6eo6kdQgw==",
+  "dgSpecHash": "HeBFCP2kS2q0lN6pEl+wYMWr0pLJgzpQGIPk2uWWnm1h6CIed0Ye2ylXYaYXYdI1SbHiYaIjUv4TZ4yicJHWPw==",
   "success": true,
   "projectFilePath": "/Users/danielgilman/Desktop/backend-dotnet/final-project/backend/backend.csproj",
   "expectedPackageFiles": [
     "/Users/danielgilman/.nuget/packages/bcrypt.net-next/4.0.3/bcrypt.net-next.4.0.3.nupkg.sha512",
     "/Users/danielgilman/.nuget/packages/humanizer.core/2.8.26/humanizer.core.2.8.26.nupkg.sha512",
+    "/Users/danielgilman/.nuget/packages/microsoft.aspnetcore.authentication.jwtbearer/8.0.2/microsoft.aspnetcore.authentication.jwtbearer.8.0.2.nupkg.sha512",
     "/Users/danielgilman/.nuget/packages/microsoft.aspnetcore.openapi/8.0.1/microsoft.aspnetcore.openapi.8.0.1.nupkg.sha512",
     "/Users/danielgilman/.nuget/packages/microsoft.data.sqlite.core/6.0.0/microsoft.data.sqlite.core.6.0.0.nupkg.sha512",
     "/Users/danielgilman/.nuget/packages/microsoft.entityframeworkcore/6.0.0/microsoft.entityframeworkcore.6.0.0.nupkg.sha512",
@@ -29,6 +30,8 @@
     "/Users/danielgilman/.nuget/packages/microsoft.identitymodel.abstractions/7.3.1/microsoft.identitymodel.abstractions.7.3.1.nupkg.sha512",
     "/Users/danielgilman/.nuget/packages/microsoft.identitymodel.jsonwebtokens/7.3.1/microsoft.identitymodel.jsonwebtokens.7.3.1.nupkg.sha512",
     "/Users/danielgilman/.nuget/packages/microsoft.identitymodel.logging/7.3.1/microsoft.identitymodel.logging.7.3.1.nupkg.sha512",
+    "/Users/danielgilman/.nuget/packages/microsoft.identitymodel.protocols/7.1.2/microsoft.identitymodel.protocols.7.1.2.nupkg.sha512",
+    "/Users/danielgilman/.nuget/packages/microsoft.identitymodel.protocols.openidconnect/7.1.2/microsoft.identitymodel.protocols.openidconnect.7.1.2.nupkg.sha512",
     "/Users/danielgilman/.nuget/packages/microsoft.identitymodel.tokens/7.3.1/microsoft.identitymodel.tokens.7.3.1.nupkg.sha512",
     "/Users/danielgilman/.nuget/packages/microsoft.openapi/1.4.3/microsoft.openapi.1.4.3.nupkg.sha512",
     "/Users/danielgilman/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.0.6/sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",

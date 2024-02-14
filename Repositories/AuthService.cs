@@ -1,5 +1,10 @@
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Security.Principal;
+using System.Text;
 using backend.Migrations;
 using backend.Models;
+using Microsoft.IdentityModel.Tokens;
 using bcrypt = BCrypt.Net.BCrypt;
 
 
@@ -42,6 +47,32 @@ public class AuthService : IAuthService
             return String.Empty;
         }
 
-        return "";
+        return BuildToken(user);
+    }
+
+    private string BuildToken(User user)
+    {
+        var secret = _config.GetValue<String>("TokenSecret");
+        var signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secret));
+
+        var signingCredentials = new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256);
+
+        var claims = new Claim[]
+        {
+            new Claim(JwtRegisteredClaimNames.Sub, user.UserId.ToString()),
+            new Claim(JwtRegisteredClaimNames.Name, user.UserName ?? ""),
+            new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName ?? ""),
+            new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName ?? "")
+        };
+
+        var jwt = new JwtSecurityToken(
+            claims: claims,
+            expires: DateTime.Now.AddMinutes(5),
+            signingCredentials: signingCredentials
+        );
+
+        var encodedJwt = new JwtSecurityTokenHandler().WriteToken(jwt);
+
+        return encodedJwt;
     }
 }

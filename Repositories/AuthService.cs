@@ -31,6 +31,8 @@ public class AuthService : IAuthService
         return user;
     }
 
+
+    
     public string SignIn(string userName, string password)
     {
         var user = _context.Users.SingleOrDefault(x => x.UserName == userName);

@@ -47,6 +47,7 @@ public class ArkRepository : IArkRepository
             originalArk.Content = newArk.Content;
             originalArk.ImgUrl = newArk.ImgUrl;
             originalArk.Location = newArk.Location;
+            _context.SaveChanges();
         }
 
         return originalArk;

@@ -2,70 +2,72 @@ using backend.Models;
 using backend.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
-namespace backend.Controllers;
-
-[ApiController]
-[Route("[controller]")]
-public class ArkController : ControllerBase
+namespace backend.Controllers
 {
-    private readonly ILogger<ArkController> _logger;
-    private readonly IArkRepository _arkRepository;
-
-    public ArkController(ILogger<ArkController> logger, IArkRepository repository)
+    [ApiController]
+    [Route("api/[controller]")]
+    public class ArkController : ControllerBase
     {
-        _logger = logger;
-        _arkRepository = repository;
-    }
+        private readonly ILogger<ArkController> _logger;
+        private readonly IArkRepository _arkRepository;
 
-    [HttpGet]
-    public ActionResult<IEnumerable<Arks>> GetArks()
-    {
-        return Ok(_arkRepository.GetAllArks());
-    }
-
-    [HttpGet]
-    [Route("{arkId:int}")]
-    public ActionResult<Arks> GetArkById(int arkId)
-    {
-        var ark = _arkRepository.GetArkById(arkId);
-        if(ark == null){
-            return NotFound();
-        }
-        return Ok(ark);
-    }
-
-    [HttpPost]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public ActionResult<Arks> CreateArk(Arks ark)
-    {
-        if(!ModelState.IsValid || ark == null)
+        public ArkController(ILogger<ArkController> logger, IArkRepository repository)
         {
-            return BadRequest();
+            _logger = logger;
+            _arkRepository = repository;
         }
-        var newArk = _arkRepository.CreateArk(ark);
-        return Created(nameof(GetArkById), newArk);
-    }
 
-    [HttpPut]
-    [Route("{arkId:int}")]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public ActionResult<Arks> UpdateArk(Arks ark)
-    {
-        if(!ModelState.IsValid || ark == null){
-            return BadRequest();
+        [HttpGet]
+        public ActionResult<IEnumerable<Arks>> GetArks()
+        {
+            return Ok(_arkRepository.GetAllArks());
         }
-        return Ok(_arkRepository.UpdateArk(ark));
-    }
 
-    [HttpDelete]
-    [Route("{arkId:int}")]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public ActionResult DeleteArk(int arkId)
-    {
-        _arkRepository.DeleteArkById(arkId);
-        return NoContent();
+        [HttpGet]
+        [Route("{arkId:int}")]
+        public ActionResult<Arks> GetArkById(int arkId)
+        {
+            var ark = _arkRepository.GetArkById(arkId);
+            if (ark == null)
+            {
+                return NotFound();
+            }
+            return Ok(ark);
+        }
+
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public ActionResult<Arks> CreateArk(Arks ark)
+        {
+            if (!ModelState.IsValid || ark == null)
+            {
+                return BadRequest();
+            }
+            var newArk = _arkRepository.CreateArk(ark);
+            return Created(nameof(GetArkById), newArk);
+        }
+
+        [HttpPut]
+        [Route("{arkId:int}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public ActionResult<Arks> UpdateArk(Arks ark)
+        {
+            if (!ModelState.IsValid || ark == null)
+            {
+                return BadRequest();
+            }
+            return Ok(_arkRepository.UpdateArk(ark));
+        }
+
+        [HttpDelete]
+        [Route("{arkId:int}")]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        public ActionResult DeleteArk(int arkId)
+        {
+            _arkRepository.DeleteArkById(arkId);
+            return NoContent();
+        }
     }
 }

@@ -39,6 +39,11 @@ public class ArkRepository : IArkRepository
         return _context.Arks.SingleOrDefault(u => u.ArkId == userId);
     }
 
+    public User? GetUserById(int userId)
+    {
+        return _context.Users.SingleOrDefault(u => u.UserId == userId);
+    }
+
     public Arks? UpdateArk(Arks newArk)
     {
         var originalArk = _context.Arks.Find(newArk.ArkId);

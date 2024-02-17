@@ -32,7 +32,7 @@ public class AuthService : IAuthService
     }
 
 
-    
+
     public string SignIn(string userName, string password)
     {
         var user = _context.Users.SingleOrDefault(x => x.UserName == userName);

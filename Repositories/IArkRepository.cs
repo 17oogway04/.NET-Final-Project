@@ -9,5 +9,7 @@ public interface IArkRepository
     Arks CreateArk(Arks newArk);
     Arks? UpdateArk(Arks newArk);
     void DeleteArkById(int userId);
+    
+    User? GetUserById(int userId);
 
 }

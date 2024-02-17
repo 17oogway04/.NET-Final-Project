@@ -19,4 +19,6 @@ public class User
     public string? Password {get; set;}
 
     public string? FavoriteAnimal {get; set;}
+
+    public bool ShowButton { get; set; }
 }

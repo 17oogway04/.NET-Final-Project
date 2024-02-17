@@ -37,18 +37,6 @@ namespace backend.Controllers
             return Ok(ark);
         }
 
-        [HttpGet]
-        [Route("{userId:int}")]
-        public ActionResult<User> GetUserById(int userId)
-        {
-            var user = _arkRepository.GetUserById(userId);
-            if(user == null)
-            {
-                return NotFound();
-            }
-            return Ok(user);
-        }
-
         [HttpPost]
         [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         public ActionResult<Arks> CreateArk(Arks ark)

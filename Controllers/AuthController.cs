@@ -17,6 +17,7 @@ public class AuthController : ControllerBase
         _authService = service;
     }
 
+
     [HttpPost]
     [Route("register")]
     public ActionResult CreateUser(User user)
